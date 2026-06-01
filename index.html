@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shitate — 着物リメイクのマッチングサービス（2026年7月開始予定）</title>
+  <meta name="description" content="眠っている母の着物を、もう一度着られる服に。着物リメイク特化のマッチングサービス Shitate。2026年7月開始予定。リリース通知を受け取るメール登録受付中。">
+  <meta name="robots" content="noindex,nofollow">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTR6PS018P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MTR6PS018P');
+  </script>
+
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      font-family: "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+      line-height: 1.9;
+      color: #3B3B3B;
+      background: #FEFAF6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Typography ===== */
+    h1, h2, h3 {
+      font-family: "游明朝体", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #2C2C2C;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Header ===== */
+    .header {
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .header-logo {
+      font-family: "游明朝体", "Yu Mincho", YuMincho, serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      color: #4A6B8A;
+    }
+
+    /* ===== Hero / First View ===== */
+    .hero {
+      padding: 48px 0 56px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #4A6B8A;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 6px 20px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    .hero-badge .date {
+      margin-left: 8px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+    .hero-title {
+      font-size: 1.7rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: #6B6B6B;
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+
+    /* ===== Form Card ===== */
+    .form-card {
+      background: #fff;
+      border: 1px solid #E8E0D8;
+      border-radius: 12px;
+      padding: 36px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      text-align: center;
+    }
+    .form-card-label {
+      font-size: 0.85rem;
+      color: #6B6B6B;
+      margin-bottom: 16px;
+    }
+    .form-iframe-wrapper {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto 20px;
+    }
+    .form-iframe-wrapper iframe {
+      width: 100%;
+      height: 540px;
+      border: none;
+    }
+    .form-consent {
+      font-size: 0.8rem;
+      color: #999;
+      line-height: 1.8;
+      margin-top: 12px;
+    }
+    .form-consent a {
+      color: #4A6B8A;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .form-reassurance {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: #8B7355;
+      background: #FDF8F0;
+      border: 1px solid #EDE0D0;
+      border-radius: 6px;
+      padding: 8px 18px;
+      margin-bottom: 20px;
+    }
+
+    /* ===== Trust Section ===== */
+    .trust {
+      padding: 64px 0;
+      background: #fff;
+      border-top: 1px solid #F0E8DC;
+      border-bottom: 1px solid #F0E8DC;
+    }
+    .trust-heading {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #5C5C5C;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .trust-item {
+      text-align: center;
+      padding: 0 16px;
+    }
+    .trust-item-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .trust-item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2C2C2C;
+    }
+    .trust-item-desc {
+      font-size: 0.85rem;
+      color: #6B6B6B;
+      line-height: 1.8;
+    }
+    .trust-price-comparison {
+      margin-top: 40px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .trust-price-comparison table {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .trust-price-comparison th,
+    .trust-price-comparison td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #EDE0D0;
+      text-align: left;
+    }
+    .trust-price-comparison th {
+      font-weight: 600;
+      color: #4A6B8A;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+    .trust-price-comparison .highlight {
+      font-weight: 600;
+      color: #4A6B8A;
+    }
+
+    /* ===== Operator ===== */
+    .operator {
+      padding: 48px 0;
+      text-align: center;
+    }
+    .operator-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #E8E0D8;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+    .operator-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2C2C2C;
+    }
+    .operator-desc {
+      font-size: 0.8rem;
+      color: #6B6B6B;
+      line-height: 1.8;
+      margin-top: 8px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 1px solid #F0E8DC;
+      font-size: 0.7rem;
+      color: #999;
+      line-height: 2.2;
+    }
+    .footer a {
+      color: #4A6B8A;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 480px) {
+      html { font-size: 16px; }
+      .hero { padding: 32px 0 40px; }
+      .hero-title { font-size: 1.4rem; }
+      .form-card { padding: 24px 16px; }
+      .trust { padding: 48px 0; }
+    }
+    @media (min-width: 768px) {
+      .trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 680px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-logo">Shitate</div>
+  </header>
+
+  <!-- Hero / First View -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">
+          Coming Soon<span class="date">2026年7月予定</span>
+        </div>
+        <h1 class="hero-title">眠っている母の着物を、<br>もう一度着られる服に。</h1>
+        <p class="hero-subtitle">
+          着物リメイク特化のマッチングサービス「Shitate」<br>
+          信頼できる職人と、思い出の一着をつなぎます。
+        </p>
+
+        <!-- Form Card -->
+        <div class="form-card">
+          <p class="form-reassurance">
+            送るのはリリース時のお知らせだけ。営業メールは送りません
+          </p>
+          <p class="form-card-label">
+            メールアドレスを登録して、<br>リリース時にいち早くお知らせを受け取る
+          </p>
+          <div class="form-iframe-wrapper">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSecMwPqTkwEaP3Q83Mf4ixeHPmbWQceEf23KiaOA-omWJ-VgQ/viewform?embedded=true"
+              title="メールアドレス登録フォーム">
+              読み込み中…
+            </iframe>
+          </div>
+          <p class="form-consent">
+            登録するとリリース通知メールの受信と<a href="privacy.html">プライバシー方針</a>に同意したことになります。<br>
+            お預かりしたメールアドレスは、リリース通知と先行予約のご案内にのみ使用します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Reinforcement -->
+    <section class="trust">
+      <div class="container">
+        <h2 class="trust-heading">Shitate が選ばれる理由</h2>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-item-icon" aria-hidden="true">🔍</div>
+            <div class="trust-item-title">信頼できる職人と出会える</div>
+            <div class="trust-item-desc">
+              着物の素材や柄を理解した、確かな技術を持つ職人をご紹介します。過去の作品写真で仕上がりを確認できるので安心です。
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-item-icon" aria-hidden="true">💰</div>
+            <div class="trust-item-title">手数料 15% の適正価格</div>
+            <div class="trust-item-desc">
+              大手より低い手数料で、職人にも依頼者にも公平な価格を実現します。見積もりは一式でもらい、後から追加料金で驚く心配がありません。
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-item-icon" aria-hidden="true">🤝</div>
+            <div class="trust-item-title">思い出を受け継ぐ体験を</div>
+            <div class="trust-item-desc">
+              着物リメイクは、単なる衣類の再利用ではありません。大切な方の思い出を、日常の中で受け継いでいくお手伝いをします。
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-price-comparison">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Shitate</th>
+                <th>大手サービス</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>手数料</td>
+                <td class="highlight">15%</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>職人ロックイン</td>
+                <td class="highlight">なし</td>
+                <td>違約金あり</td>
+              </tr>
+              <tr>
+                <td>固定費</td>
+                <td class="highlight">小規模</td>
+                <td>大規模（広告費込み）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operator -->
+    <section class="operator">
+      <div class="container">
+        <div class="operator-avatar" aria-hidden="true">🧵</div>
+        <p class="operator-name">Shitate 運営</p>
+        <p class="operator-desc">
+          着物リメイクのマッチングを個人で運営しています。<br>
+          大手にはできない、一着一着に寄り添うサービスを目指しています。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="privacy.html">プライバシー方針</a>
+        <a href="https://note.com/shitate" target="_blank" rel="noopener">note</a>
+      </div>
+      <p>&copy; 2026 Shitate</p>
+    </div>
+  </footer>
+
+</body>
+</html>

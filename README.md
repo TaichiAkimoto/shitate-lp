@@ -1,0 +1,1 @@
+shitate-lp deploy
