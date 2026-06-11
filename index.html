@@ -6,6 +6,8 @@
   <title>Shitate — 縫製マッチングプラットフォーム（2026年7月開始予定）</title>
   <meta name="description" content="職人と依頼者をつなぐ縫製マッチングプラットフォーム Shitate。2026年7月開始予定。リリース通知を受け取るメール登録受付中。">
   <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="refresh" content="0;url=https://app.shitate.shop/">
+  <script>window.location.replace('https://app.shitate.shop/');</script>
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTR6PS018P"></script>
@@ -45,14 +47,29 @@
 
     /* ===== Header ===== */
     .header {
-      padding: 20px 24px;
+      padding: 28px 24px 18px;
       text-align: center;
+      background: #FEFAF6;
+      border-bottom: 2px solid #C8A96E;
     }
     .header-logo {
       font-family: "游明朝体", "Yu Mincho", YuMincho, serif;
-      font-size: 1.2rem;
-      letter-spacing: 0.08em;
-      color: #4A6B8A;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: #1B2A4A;
+    }
+    .header-service-name {
+      font-size: 0.85rem;
+      color: #1B2A4A;
+      letter-spacing: 0.10em;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .header-slogan {
+      font-size: 0.9rem;
+      color: #6B6B6B;
+      letter-spacing: 0.06em;
+      margin-top: 6px;
     }
 
     /* ===== Hero / First View ===== */
@@ -62,7 +79,7 @@
     }
     .hero-badge {
       display: inline-block;
-      background: #4A6B8A;
+      background: #1B2A4A;
       color: #fff;
       font-size: 0.8rem;
       font-weight: 600;
@@ -119,7 +136,7 @@
       margin-top: 12px;
     }
     .form-consent a {
-      color: #4A6B8A;
+      color: #1B2A4A;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
@@ -193,13 +210,13 @@
     }
     .trust-price-comparison th {
       font-weight: 600;
-      color: #4A6B8A;
+      color: #1B2A4A;
       font-size: 0.8rem;
       letter-spacing: 0.04em;
     }
     .trust-price-comparison .highlight {
       font-weight: 600;
-      color: #4A6B8A;
+      color: #1B2A4A;
     }
 
     /* ===== Operator ===== */
@@ -243,7 +260,7 @@
       line-height: 2.2;
     }
     .footer a {
-      color: #4A6B8A;
+      color: #1B2A4A;
       text-decoration: none;
     }
     .footer a:hover {
@@ -260,6 +277,7 @@
     /* ===== Responsive ===== */
     @media (max-width: 480px) {
       html { font-size: 16px; }
+      .header { padding: 16px 16px 14px; }
       .hero { padding: 32px 0 40px; }
       .hero-title { font-size: 1.4rem; }
       .form-card { padding: 24px 16px; }
@@ -277,7 +295,9 @@
 
   <!-- Header -->
   <header class="header">
+    <p class="header-service-name">縫製マッチングプラットフォーム</p>
     <div class="header-logo">Shitate</div>
+    <p class="header-slogan">職人にもっと仕事を。広告費ゼロ。固定費ゼロ。</p>
   </header>
 
   <!-- Hero / First View -->
